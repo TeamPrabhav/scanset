@@ -18,3 +18,17 @@ nmap_info
 
 GUI
 * sortable tables using https://datatables.net/
+
+Literature Survey
+
+https://github.com/ATpiu/asset-scan
+
+https://github.com/trimstray/sandmap
+Nmap on steroids
+
+https://github.com/schweikert/fping
+High performance ping tool
+
+https://www.timescale.com/
+time series database
+
