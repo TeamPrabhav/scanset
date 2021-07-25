@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Scanset</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+
+    <!-- for pagination and datatables -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+<!-- Bootstrap core JavaScript-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Page level plugin JavaScript--><script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <!-- datatable ends -->
+    <script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+    <body>
+<script src="js/index.js"></script>
+
+
+<header class="w3-container w3-black w3-text-amber w3-card-4" style="position: sticky; top: 0;">
+<h1 class = "w3-xxxlarge w3-allerta"><span class="w3-opennav w3-xxlarge" onclick="w3_open()">&#9776;</span>&nbsp;Scanset</h1>
+</header>
+</div>
+<!-- side navigation -->
+<nav class="w3-sidenav w3-white w3-card-2" style="display:none">
+    <header class="w3-container w3-black">
+        <h5>
+         Menu <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-closenav" title="close sidenav" style=" margin-top: -12px; ">×</a>
+            <!-- <a href="javascript:void(0)"  onclick="w3_close()" class="w3-closenav w3-xlarge" style=" margin-left: 288px; width: min-content;"> &times;</a> -->
+        </h5>
+    </header>
+    <a class="w3-hover-amber w3-amber tablink" href="#"  onclick="openTab('Home', this)">Home</a>	
+    <a class="w3-hover-amber tablink" href="#" onclick="openTab('Search', this)">Search</a>	
+    		
+    </nav>
+<!-- side navigation -->
+<div id="main">
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div id="Home" class="w3-container  w3-round-large w3-padding-xlarge tabs">
+        <h2 class=" w3-border-bottom w3-border-black"><strong>Scan Results</strong> 
+            <span style="float: right;">
+            <button class="w3-btn w3-round w3-medium" style="margin-bottom: 7px;">Scan</button></h2></span>
+            <div class="w3-card-2 w3-round-large w3-border-black" style="text-align: center;height: 100px;margin-top: 23px;margin-bottom: 23px;padding: 16px;">
+                &nbsp;&nbsp;&nbsp;
+                <label for="OSSearch">OS Search: </label>
+                <select name="OSSearch" id="OSSearch" >
+                    <option value="">--Select--</option>
+                    <option value="windows">Windows</option>
+                    <option value="Linux">Linux</option>
+                    <option value="macOS">MacOS</option>
+                  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label for="IPSearch">IP Search: </label>
+                  <input type="text" placeholder="IP Search">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label for="MACSearch">MAC Search: </label>
+                  <input type="text" placeholder="MAC Search"><br>
+                  <label for="hostSearch">Hostname Search: </label>
+                  <input type="text" placeholder="Hostname Search">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label for="domSearch">Domain Search: </label>
+                  <input type="text" placeholder="Domain Search">
+            </div>
+        <div>
+            <table class="w3-table w3-striped  w3-hoverable" id="dataTable">
+                <thead>
+                <tr class="w3-amber">
+                    <th class="text-center">Last Seen</th>
+            <th>Timestamp</th>
+            <th>IP address</th>
+            <th>MAC address</th>
+            <th>Hostname</th>
+            <th>Domain Information</th>
+            <th style="width: 203.2969px;">Operating System</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="w3-text-green" style='font-weight:bold;'>
+                            <td class="text-center">10-04-19 12:00:17</td>
+                            <td>10-04-19 12:00:17</td>
+                            <td>193.168. 0.1</td>
+                            <td>01-23-45-67-89-AB</td>
+                            <td>hostname</td>
+                            <td>Domain Information</td>
+                            <td><img src="images/windowsicon.png" class="w3-circle" alt="Windows" style=" width: 10%;">&emsp;Windows</td>
+                            </tr>
+                        <tr>
+                            <td class="text-center">10-04-19 12:00:17</td>
+                            <td>10-04-19 12:00:17</td>
+                            <td>192.168. 0.1</td>
+                            <td>01-23-45-67-89-AB</td>
+                            <td>hostname2</td>
+                            <td>Domain Information</td>
+                            <td><img src="images/windowsicon.png" class="w3-circle" alt="Windows" style=" width: 10%;">&emsp;Windows</td>
+                            </tr>
+                            <tr>
+                        <td class="text-center">10-04-19 12:00:17</td>
+                        <td>10-04-19 12:00:17</td>
+                        <td>192.168. 0.1</td>
+                        <td>01-23-45-67-89-AB</td>
+                        <td>hostname3</td>
+                        <td>Domain Information</td>
+                        <td><img src="images/mac.png" class="w3-circle" alt="Mac" style=" width: 10%;">&emsp;MacOS</td>
+                        </tr>
+                        <tr>
+                                    <td class="text-center">10-04-19 12:00:17</td>
+                                    <td>10-04-19 12:00:17</td>
+                                    <td>192.168. 0.1</td>
+                                    <td>01-23-45-67-89-AB</td>
+                                    <td>hostname4</td>
+                                    <td>Domain Information</td>
+                                    <td><img src="images/linux.png" class="w3-circle" alt="Linux" style=" width: 10%;">&emsp;Linux</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">10-04-19 12:00:17</td>
+                                        <td>10-04-19 12:00:17</td>
+                                        <td>192.168. 0.1</td>
+                                        <td>01-23-45-67-89-AB</td>
+                                        <td>hostname5</td>
+                                        <td>Domain Information</td>
+                                        <td><img src="images/android.png" class="w3-circle" alt="Android" style=" width: 10%;">&emsp;Android</td>
+                                        </tr>
+
+                    <tr>
+                        <td class="text-center">10-04-19 12:00:17</td>
+                        <td>10-04-19 12:00:17</td>
+                        <td>192.168. 0.1</td>
+                        <td>01-23-45-67-89-AB</td>
+                        <td>hostname6</td>
+                        <td>Domain Information</td>
+                        <td><img src="images/android.png" class="w3-circle" alt="Android" style=" width: 10%;">&emsp;Android</td>
+                        </tr>
+                    <tr>
+                        <td class="text-center">10-04-19 12:00:17</td>
+                        <td>10-04-19 12:00:17</td>
+                        <td>192.168. 0.1</td>
+                        <td>01-23-45-67-89-AB</td>
+                        <td>hostname7</td>
+                        <td>Domain Information</td>
+                        <td><img src="images/android.png" class="w3-circle" alt="Android" style=" width: 10%;">&emsp;Android</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">10-04-19 12:00:17</td>
+                            <td>10-04-19 12:00:17</td>
+                            <td>192.168. 0.1</td>
+                            <td>01-23-45-67-89-AB</td>
+                            <td>hostname8</td>
+                            <td>Domain Information</td>
+                            <td><img src="images/android.png" class="w3-circle" alt="Android" style=" width: 10%;">&emsp;Android</td>
+                            </tr>
+                    </tbody>
+                    </table>
+        </div>
+      </div>
+      <br><br>
+      <div id="Search" class="w3-container tabs" style="display: none;">
+        <!-- <div class="w3-card-4 sidebyside"> -->
+            <div class="w3-card-4 sidebyside ">
+                <h2 class=" w3-border-bottom w3-border-black"><strong>Group By OS</strong> 
+                    <span style="float: right;">
+                    <button class="w3-btn w3-round w3-medium" style="margin-bottom: 7px;">Scan</button></h2></span>
+                <div>
+                    <table class="w3-table w3-striped  w3-hoverable" >
+                <thead>
+                    <tr class="w3-amber">
+                        <td>#</td>
+                        <td>OS</td>
+                        <td>Number</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="images/android.png" class="w3-circle" alt="Android" style=" width: 10%;">&emsp;Android</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="images/linux.png" class="w3-circle" alt="Linux" style=" width: 10%;">&emsp;Linux</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="images/mac.png" class="w3-circle" alt="Mac" style=" width: 10%;">&emsp;MacOS</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="images/windowsicon.png" class="w3-circle" alt="Windows" style=" width: 10%;">&emsp;Windows</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        </div>
+        <!-- <div class="w3-card-4 sidebyside"></div> -->
+        <div  class="w3-card-4 sidebyside ">
+            <h2 class=" w3-border-bottom w3-border-black"><strong>Group By AD domain</strong> 
+                <span style="float: right;">
+                <button class="w3-btn w3-round w3-medium" style="margin-bottom: 7px; height: 31px;">Scan</button></h2></span>
+            <div>
+                <table class="w3-table w3-striped  w3-hoverable" >
+            <thead>
+                <tr class="w3-amber">
+                    <td>#</td>
+                    <td>AD Domain</td>
+                    <td>Number</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>AD Domain</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>AD Domain</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>AD Domain</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>AD Domain</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        </div>
+
+        <div  class="w3-card-4 sidebyside ">
+            <h2 class=" w3-border-bottom w3-border-black"><strong>Group By Workgroup</strong> 
+                <span style="float: right;">
+                <button class="w3-btn w3-round w3-medium" style="margin-bottom: 7px; height: 31px;">Scan</button></h2></span>
+            <div>
+                <table class="w3-table w3-striped  w3-hoverable" >
+            <thead>
+                <tr class="w3-amber"><b>
+                    <td>#</td>
+                    <td>Workgroup</td>
+                    <td>Number</td>
+                </b> </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>workgroup 1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>workgroup 2</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>workgroup 3</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>workgroup 4</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        </div>
+        
+        <div class="w3-card-4 sidebyside">
+            <div class=" w3-border-bottom w3-border-black">
+                <label for="chartDmain">AD Domain:</label>
+                <select name="chartDmain" id="chartDmain" >
+                    <option value="hr">HR Domain</option>
+                    <option value="it">IT Domain</option>
+                    
+                  </select>&nbsp;&nbsp;&nbsp;
+                  <label for="dateRangeD">Range:</label>
+                <select name="dateRangeD" id="dateRangeD" >
+                    <option value="today">Today</option>
+                    <option value="week">This week</option>
+                    <option value="month">This month</option>
+                  </select>
+                  <span style="float: right;">
+                    <button class="w3-btn w3-round w3-medium" style="margin-bottom: 7px; height: 31px;">Scan</button></span>
+            </div>
+            <br>
+            <canvas id="myChart" ></canvas>
+        </div>
+        <!-- <div class="w3-card-4 sidebyside">
+            <div id="piechart"></div>
+        </div> -->
+        <div class="w3-card-4 sidebyside">
+            <div class=" w3-border-bottom w3-border-black">
+                <!-- <label for="chartDmain">AD Domain:</label>
+                <select name="chartDmain" id="chartDmain" >
+                    <option value="hr">HR Domain</option>
+                    <option value="it">IT Domain</option>
+                    
+                  </select>&nbsp;&nbsp;&nbsp; -->
+                  <label for="dateRangeD">Range:</label>
+                <select name="dateRangeD" id="dateRangeD" >
+                    <!-- <option value="today">Today</option> -->
+                    <option value="week">This week</option>
+                    <option value="month">This month</option>
+                  </select>
+                  <span style="float: right;">
+                    <button class="w3-btn w3-round w3-medium" style="margin-bottom: 7px;">Scan</button></span>
+            </div>
+            <br>
+            <canvas id="myChart1" ></canvas>
+        </div>
+      </div>
+      <script>
+        var xValues = ["Windows", "MacOS", "Linux", "Android"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = ["rgba(252, 177, 3)",
+        "rgba(252, 194, 3)",
+        "rgba(252, 211, 3)",
+        "rgba(252, 227, 3)"];
+        
+        new Chart("myChart", {
+          type: "bar",
+          data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+          options: {
+            legend: {display: false},
+            title: {
+              display: true,
+              text: "Number of devices in HR domain today"
+            },
+            scales: {
+              xAxes: [{ticks: {min: 10, max:60}}]
+            }
+          }
+        });
+        </script>
+        <script>
+            var xValues = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+            var yValues = [9,10,11,14,14,9,9];
+            
+            new Chart("myChart1", {
+              type: "line",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  fill: false,
+                  lineTension: 0,
+                  backgroundColor: "rgba(13, 13, 12)",
+                  borderColor: "rgba(235, 183, 52)",
+                  data: yValues
+                }]
+              },
+              options: {
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: "Number of devices discovered this week"
+                  },
+                scales: {
+                  yAxes: [{ticks: {min: 6, max:16}}],
+                }
+              }
+            });
+            </script>
+</body>
+</html> 

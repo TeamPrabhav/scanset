@@ -1,0 +1,22 @@
+.w3-allerta {
+    font-family: "Allerta Stencil", Sans-serif;
+  }
+
+  header {
+    background-image: url('../images/backgrnd.JPG');
+    /* background-repeat: no-repeat; */
+    background-attachment: fixed;
+    /* background-size: cover; */
+  }
+
+.pagination > li > a, .pagination > li > span{color: #000!important;
+  background-color: white!important;}
+.pagination > li.active > a, .pagination > li.active > span{background-color: #ffc107!important; color: #000!important}
+
+.sidebyside {
+  width: 45%;
+  height: 334px;
+  margin: 24px 24px;
+  padding: 16px;
+  float: left;
+}
