@@ -1,0 +1,42 @@
+{
+    'nmap': {
+        'command_line': 'nmap -oX - -sn 192.168.29.1/24',
+        'scaninfo': {}, 
+        'scanstats': {
+            'timestr': 'Thu Jul 22 22:37:13 2021', 
+            'elapsed': '4.90', 
+            'uphosts': '5', 
+            'downhosts': '251', 
+            'totalhosts': '256'
+        }
+    }, 
+    'scan': {
+        '192.168.29.1': {
+            'hostnames': [{
+                'name': 'reliance.reliance', 
+                'type': 'PTR'
+            }], 
+            'addresses': {
+                'ipv4': '192.168.29.1', 
+                'mac': 'A8:DA:0C:3F:A6:F7'
+            }, 
+            'vendor': {}, 
+            'status': {
+                'state': 'up', 
+                'reason': 'arp-response'
+            }
+        },
+        '192.168.29.131': {
+            'hostnames': [{'name': '', 'type': ''}], 
+            'addresses': {
+                'ipv4': '192.168.29.131', 
+                'mac': '30:24:32:3C:1D:01'
+                }, 
+                'vendor': {
+                    '30:24:32:3C:1D:01': 'Intel Corporate'
+                    }, 
+                    'status': {
+                        'state': 'up', 
+                        'reason': 'arp-response'
+                    }
+                    }, '192.168.29.229': {'hostnames': [{'name': '', 'type': ''}], 'addresses': {'ipv4': '192.168.29.229', 'mac': '66:F4:F7:E7:EA:CD'}, 'vendor': {}, 'status': {'state': 'up', 'reason': 'arp-response'}}, '192.168.29.242': {'hostnames': [{'name': '', 'type': ''}], 'addresses': {'ipv4': '192.168.29.242', 'mac': 'D8:07:B6:8B:5A:7C'}, 'vendor': {'D8:07:B6:8B:5A:7C': 'Tp-link Technologies'}, 'status': {'state': 'up', 'reason': 'arp-response'}}, '192.168.29.184': {'hostnames': [{'name': '', 'type': ''}], 'addresses': {'ipv4': '192.168.29.184'}, 'vendor': {}, 'status': {'state': 'up', 'reason': 'localhost-response'}}}}

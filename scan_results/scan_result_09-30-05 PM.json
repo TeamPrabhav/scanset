@@ -1,0 +1,61 @@
+{
+    "nmap": {
+        
+        "command_line": "nmap -oX - -p 22 -O 192.168.29.184", 
+        "scaninfo": {
+            
+            "tcp": {
+                
+                "method": "syn",
+                 "services": "22"
+            }
+        }, 
+        "scanstats": {
+            "timestr": "Thu Jul 22 21:30:05 2021", 
+            "elapsed": "1.85", 
+            "uphosts": "1", 
+            "downhosts": "0", 
+            "totalhosts": "1"
+        }
+    }, 
+    "scan": {
+        "192.168.29.184": {
+
+            "hostnames": [{
+                "name": "", 
+                "type": ""
+            }],
+            "addresses": {
+                "ipv4": "192.168.29.184"
+            }, 
+            "vendor": {}, 
+            "status": {
+                "state": "up", 
+                "reason": "localhost-response"
+            }, 
+            "tcp": {
+
+                "22": {
+                    "state": "closed", 
+                    "reason": "reset",
+                    "name": "ssh",
+                    "product": "",
+                    "version": "", 
+                    "extrainfo": "", 
+                    "conf": "3", 
+                    "cpe": ""
+                    }
+            }, 
+            "portused": [{
+                "state": "closed",
+                "proto": "tcp", 
+                "portid": "22"
+            }, {
+                "state": "closed", 
+                "proto": "udp", 
+                "portid": "44575"
+            }], 
+            "osmatch": []
+        }
+    }
+}
